@@ -1,10 +1,13 @@
 <template>
-    <main class="flex f-wrap justify-center">
-        <div v-for="(album, index) in albums" :key="index" 
-        class="card-wrapper"
-        >
-            <Card :infos="album" />
+    <main class="flex items-center justify-center">
+        <div v-if="!loading" class="flex f-wrap justify-center">
+            <div v-for="(album, index) in albums" :key="index"
+            class="card-wrapper"
+            >
+                <Card :infos="album" />
+            </div>
         </div>
+        <div v-else class="loading">Loading...</div>
     </main>
 </template>
 
@@ -49,6 +52,7 @@ export default {
 
 main{
     margin: 100px 57.5px 30px;
+    min-height: 400px;
     .card-wrapper{
         width: calc(100% / 8);
         min-height: 379px;
