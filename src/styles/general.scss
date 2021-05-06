@@ -1,0 +1,14 @@
+// GENERAL STYLES
+@import './vars.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main-font;
+}
+
+body{
+    background: $bg-main;
+    color: $main-text;
+}
