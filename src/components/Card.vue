@@ -1,10 +1,10 @@
 <template>
     <div class="info-wrap flex f-column items-center">
-        <div class="img-wrap"><img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="music album"></div>
-        <h2 class="album-title"></h2>
-        <div class="album-author"></div>
-        <div class="production-year"></div>
-        <div class="music-style"></div>
+        <div class="img-wrap"><img :src="infos.poster" :alt="infos.title"></div>
+        <h3 class="album-title">{{infos.title}}</h3>
+        <div class="album-author">{{infos.author}}</div>
+        <div class="production-year">{{infos.year}}</div>
+        <div class="music-style">{{infos.genre}}</div>
     </div>
 </template>
 
@@ -21,16 +21,34 @@ export default {
 @import '../styles/vars';
 
 .info-wrap{
+    height: 100%;
     background: $bg-secondary;
-    padding-top: 20px;
-    margin-top: 15px;
+    padding: 20px;
     .img-wrap{
-        width: 80%;
         height: 150px;
+        margin-bottom: $inner-margin-big;
         img{
             width: 100%;
             height: 100%;
         }
+    }
+    .album-title{
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: $inner-margin-big;
+    }
+    .album-author{
+        font-size: 18px;
+    }
+    .album-author,
+    .production-year{
+        color: $secondary-text;
+        font-weight: 500;
+        margin-bottom: $inner-margin-small;
+    }
+    .music-style{
+        color: $main-text;
+        font-weight: 500;
     }
 }
 </style>

@@ -48,14 +48,12 @@ export default {
 @import '../styles/vars.scss';
 
 main{
-    margin: 125px 57.5px 30px;
-    // background: rgba(204, 204, 204, 0.37);
+    margin: 100px 57.5px 30px;
     .card-wrapper{
         width: calc(100% / 8);
+        min-height: 379px;
         padding:0 17.5px;
-        &:last-child{
-        margin-right: 0;
-        }
+        margin-top: 15px;
     }
 }
 </style>
