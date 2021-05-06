@@ -1,11 +1,11 @@
 <template>
-    <div class="info-wrap flex f-column items-center">
+    <a href="#" class="info-wrap flex f-column items-center">
         <div class="img-wrap"><img :src="infos.poster" :alt="infos.title"></div>
         <h3 class="album-title">{{infos.title}}</h3>
         <div class="album-author">{{infos.author}}</div>
         <div class="production-year">{{infos.year}}</div>
         <div class="music-style">{{infos.genre}}</div>
-    </div>
+    </a>
 </template>
 
 <script>
@@ -24,6 +24,11 @@ export default {
     height: 100%;
     background: $bg-secondary;
     padding: 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease-out;
+    &:hover{
+        transform: scale(1.05);
+    }
     .img-wrap{
         height: 150px;
         margin-bottom: $inner-margin-big;

@@ -1,8 +1,8 @@
 <template>
   <header>
-      <div class="logo-wrap">
+      <a class="logo-wrap" href="#">
           <img :src="logo" alt="logo"/>
-      </div>
+      </a>
   </header>
 </template>
 
@@ -21,6 +21,7 @@ header{
     padding: 15px;
     background: $bg-secondary;
     .logo-wrap{
+        display: block;
         width: 50px;
         height: 50px;
         img{
