@@ -1,8 +1,11 @@
 <template>
-    <main class="flex items-center justify-center">
+    <main>
+        <Select />
         <div v-if="!loading" class="flex f-wrap justify-center">
-            <div v-for="(album, index) in albums" :key="index"
-            class="card-wrapper"
+            <div
+                v-for="(album, index) in albums"
+                :key="index"
+                class="card-wrapper"
             >
                 <Card :infos="album" />
             </div>
@@ -12,20 +15,22 @@
 </template>
 
 <script>
-import Card from './Card';
-import axios from 'axios';
+import Card from "./Card";
+import axios from "axios";
+import Select from "./Select";
 
 export default {
-    name: 'Main',
+    name: "Main",
     components: {
         Card,
+        Select,
     },
-     data() {
+    data() {
         return {
-            apiURL: 'https://flynn.boolean.careers/exercises/api/array/music',
+            apiURL: "https://flynn.boolean.careers/exercises/api/array/music",
             albums: [],
             loading: true,
-        }
+        };
     },
     created() {
         this.getAlbums();
@@ -33,30 +38,31 @@ export default {
     methods: {
         getAlbums() {
             // API call
-            axios.get(this.apiURL)
-            .then(result => {
-                this.albums = result.data.response;
-                this.loading = false;
-            })
-            .catch(error => {
-                console.log(error);
-            });
+            axios
+                .get(this.apiURL)
+                .then((result) => {
+                    this.albums = result.data.response;
+                    this.loading = false;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         },
     },
-}
+};
 </script>
 
 <style scoped lang="scss">
 // Variables
-@import '../styles/vars.scss';
+@import "../styles/vars.scss";
 
-main{
+main {
     margin: 100px 57.5px 30px;
     min-height: 400px;
-    .card-wrapper{
+    .card-wrapper {
         width: calc(100% / 8);
         min-height: 379px;
-        padding:0 17.5px;
+        padding: 0 17.5px;
         margin-top: 15px;
     }
 }

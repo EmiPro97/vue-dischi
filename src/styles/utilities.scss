@@ -1,21 +1,25 @@
 // UTILITIES
 // Layout
-.flex{
+.flex {
     display: flex;
 }
 
-.f-column{
+.inline-flex {
+    display: inline-flex;
+}
+
+.f-column {
     flex-direction: column;
 }
 
-.f-wrap{
+.f-wrap {
     flex-wrap: wrap;
 }
 
-.items-center{
+.items-center {
     align-items: center;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center;
 }
